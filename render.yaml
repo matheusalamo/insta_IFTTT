@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: instagram-to-discord
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
+      - key: INSTAGRAM_PROFILES
+        sync: false
+      - key: POLLING_INTERVAL
+        value: "15"
+      - key: MAX_POSTS_PER_CHECK
+        value: "5"
+    healthCheckPath: /health

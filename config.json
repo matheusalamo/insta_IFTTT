@@ -1,0 +1,8 @@
+{
+  "discord_webhook_url": "__DISCORD_WEBHOOK_URL__",
+  "instagram_profiles": ["https://www.instagram.com/nasa/"],
+  "polling_interval_minutes": 15,
+  "max_posts_per_check": 5,
+  "headless": true,
+  "data_dir": "./data"
+}
