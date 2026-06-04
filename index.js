@@ -12,7 +12,9 @@ function loadConfig() {
   const cfg = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
 
   cfg.discord_webhook_url = process.env.DISCORD_WEBHOOK_URL || cfg.discord_webhook_url;
-  if (process.env.INSTAGRAM_PROFILES) {
+  if (process.env.INSTAGRAM_PROFILE) {
+    cfg.instagram_profiles = [process.env.INSTAGRAM_PROFILE.trim()];
+  } else if (process.env.INSTAGRAM_PROFILES) {
     cfg.instagram_profiles = process.env.INSTAGRAM_PROFILES.split(',').map(s => s.trim());
   }
   if (process.env.POLLING_INTERVAL) {
